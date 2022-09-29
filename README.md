@@ -8,6 +8,12 @@ npm install --save vue-pdf3
 
 ## 代码示例
 
+### 全局引入
+```js
+import pdf from 'vue-pdf3';
+
+app.use(pdf);
+```
 ### 局部引入
 ```vue
 <template>
