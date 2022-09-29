@@ -5,7 +5,7 @@ import './index.css';
 const id = 'vue-pdf3-' + Math.ceil(Math.random() * 10000000000);
 
 export default {
-  name:"VuePdf3",
+  name: "VuePdf3",
   props: {
     url: {
       type: String,
@@ -33,25 +33,34 @@ export default {
       ) {
         PDFJS.GlobalWorkerOptions.workerPort = new PdfjsWorker();
       }
-      var loadingTask = PDFJS.getDocument(source);
+      let loadingTask = PDFJS.getDocument(source);
       loadingTask.__PDFDocumentLoadingTask = true;
 
       loadingTask.promise.then((pdf) => {
-        var pdfPages = pdf.numPages;
-        for (var i = 1; i <= pdfPages; i++) {
+        let pdfPages = pdf.numPages;
+        for (let i = 1; i <= pdfPages; i++) {
           pdf.getPage(i).then((page) => {
-            var pixelRatio = 3;
-            var viewport = page.getViewport({ scale: 1 });
-            var canvas = this.$refs.pdf.appendChild(window.document.createElement("canvas"));
-            canvas.className = "page";
+            let pixelRatio = 3;
+            let viewport = page.getViewport({ scale: 1 });
+            let divPage = window.document.createElement("div");
+            let loading = window.document.createElement("div");
+            loading.className = "loading";
+            divPage.appendChild(loading);
+            let canvas = divPage.appendChild(window.document.createElement("canvas"));
+            divPage.className = "page";
+            this.$refs.pdf.appendChild(divPage);
             canvas.width = viewport.width * pixelRatio;
             canvas.height = viewport.height * pixelRatio;
-            var renderContext = {
+            let renderContext = {
               canvasContext: canvas.getContext("2d"),
               viewport: viewport,
               transform: [pixelRatio, 0, 0, pixelRatio, 0, 0],
             };
-            page.render(renderContext);
+            page.render(renderContext).promise.then(() => {
+              divPage.className = "page complete";
+            }).catch(() => {
+
+            });
           });
         }
       });
