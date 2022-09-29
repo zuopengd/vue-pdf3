@@ -5,7 +5,7 @@ import './viewer.css';
 const id = 'vue-pdf3-' + Math.ceil(Math.random() * 10000000000);
 
 export default {
-  name: "VuePdf3",
+  name: "PdfPreview",
   props: {
     url: {
       type: String,

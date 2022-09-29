@@ -13,6 +13,15 @@ import pdf from './components/vue-pdf3';
 
 app.use(pdf);
 ```
+```base
+<script setup>
+const url = "https://zuopengd.github.io/vue-pdf3/dist/欢迎使用WPS Office for Mac同步文件夹.pdf";
+</script>
+  
+<template>
+  <pdf-preview :url="url" />
+</template>
+```
 
 ## 演示
 
