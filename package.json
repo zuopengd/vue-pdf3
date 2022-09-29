@@ -1,6 +1,6 @@
 {
   "name": "vue-pdf3",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于Vue3 + vite + PDF.js版的PDF预览插件",
   "main": "index.js",
   "scripts": {

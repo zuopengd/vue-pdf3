@@ -1,33 +1,22 @@
 # vue-pdf3
-基于Vue3 + vite + pdfjs-dist版PDF预览插件
+基于Vue3 + vite + PDF.js版的PDF预览插件
 
 ## 安装
 ```bash
 npm install --save vue-pdf3
 ```
 
-## 代码示例
-
-### 全局引入
+## 全局引入
+把安装好的vue-pdf3拷贝到 src/components 中
 ```js
-import pdf from 'vue-pdf3';
+import pdf from './components/vue-pdf3';
 
 app.use(pdf);
-```
-### 局部引入
-```vue
-<template>
-  <pdf url="./demo.pdf"></pdf>
-</template>
-
-<script setup>
-import pdf from 'vue-pdf3'
-</script>
 ```
 
 ## 演示
 
-[vue-pdf3 演示链接](https://baidu.com)
+[vue-pdf3 演示链接](https://zuopengd.github.io/vue-pdf3/dist/index.html)
 
 ## 浏览器支持
 与 [Vue.js 3](https://github.com/vuejs/core/blob/main/README.md) 相同
