@@ -1,0 +1,22 @@
+{
+  "name": "vue-pdf3",
+  "version": "1.0.0",
+  "description": "基于Vue3 + vite + pdfjs-dist版的PDF预览插件",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuopengd/vue-pdf3.git"
+  },
+  "keywords": [
+    "vue.js",
+    "vue-pdf",
+    "vue-pdf3"
+  ],
+  "author": "Zuo Peng",
+  "license": "MIT",
+  "dependencies": {
+    "pdfjs-dist": "^2.16.105"
+  }
+}
